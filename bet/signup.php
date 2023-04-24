@@ -1,35 +1,12 @@
 <?php
-session_start();
-require('database.php');
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
-    $mysqli = require __DIR__ . "/database.php";
-
-    $sql = sprintf("SELECT * FROM user
-                    WHERE email = '%s'",
-                   $mysqli->real_escape_string($_POST["email"]));
-    
-    $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
-    if($user){
-        if($_POST["password"] == $user["password"]){
-
-            session_start();
-            $_SESSION["user_id"] = $user["id"];
-
-            header("Location: index.php");
-            exit;
-        }
-    }
-}
-
-
+    session_start();
+    require('database.php');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Signup</title>
     <meta charset="UTF-8">
     <head>
     <meta charset="utf-8">
@@ -49,8 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-              <form method="post">
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
+              <form action="process-signup.php" method="post" id="signup" novalidate>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Signup</p>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                    <input type="text" id="name" name="name" class="form-control">
+                    <label class="form-label" for="name">Your Name</label>
+                    </div>
+                  </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
@@ -69,11 +53,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
-                  <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="signup.php"
-                    class="fw-bold text-body"><u>Signup here</u></a></p>
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control">
+                    <label class="form-label" for="password_confirmation">Repeat your password</label>
+                    </div>
+                  </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="login.php"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
                 </div>
 
-                <button class="btn btn-primary btn-lg">Login</button>
+                <button class="btn btn-primary btn-lg">Signup</button>
                 
             </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
