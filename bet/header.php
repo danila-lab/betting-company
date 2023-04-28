@@ -11,9 +11,20 @@
     <link rel ="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-    <style>
+  </head>
+  <body>
+  <style>
 
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
+body{
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 1.7;
+	background-color: #1f2029;
+	overflow-x: hidden;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
@@ -41,8 +52,8 @@
             color:white;
         }
         .css-test:hover{
-            background-color:#e6e4e3;
-            color:#363534;
+            background-color:yellow;
+            color:black;
         }
 
         li{
@@ -52,10 +63,6 @@
         .padding-navbar {
             padding-left: 8rem;
             padding-right: 8rem;
-        }
-
-        .red{
-         background-color: red;   
         }
         .class-navbar{
             height: 65px;
@@ -77,26 +84,49 @@
          background-color: #2e2c2c;
          color: #fff;
         }
-        .btn-outline-success{
-         background-color: rgb(66, 66, 255);  
-         border: none;
-         color:#fff; 
-         border-radius: 6px;
-        }
-
-        .border-radiuss-1{
-            radius:50px;    /*doesnt work*/
-        }
-    </style>
-  </head>
-  <body>
-
-    <nav class="padding-navbar navbar navbar-expand-lg bg-body-tertiary navbar bg-dark class-navbar" data-bs-theme="dark">
-
-
-
+.btn{  
+  border-radius: 4px;
+  height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-transition : all 200ms linear;
+  transition: all 200ms linear;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  border: none;
+  background-color: #fade7f;
+  color: #102770;
+  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+}
+.btn:active,
+.btn:focus{  
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
+.btn:hover{  
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
+</style>
+<nav class="padding-navbar navbar navbar-expand-lg navbar bg-dark class-navbar" data-bs-theme="dark">
     <div class="container-fluid">
-    <a href="#"><img class="navbar-brand" src="/bet/pics/logo.png" width="60px" alt=""></a>
+    <a href="index.php"><img class="navbar-brand" src="/bet/pics/logo.png" width="60px" alt=""></a>
         <a class="navbar-brand g-lg-0Å¾" href="#"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -112,7 +142,7 @@
     <li class="menu-member">
         
     <?php if (isset($_SESSION["user_id"])):?>
-        <li><a href="profile.php" class=" border nav-link border border-white rounded  css-test" >Profile</a></li>
+        <a  href="profile.php" class="btn mt-1 rounded">Profile</a>
         <li><a href="logout.php" class="nav-link">Logout</a></li> 
     <?php else: ?>
         <li><a href="login.php" class="nav-link">Login</a></li>

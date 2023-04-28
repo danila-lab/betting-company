@@ -8,10 +8,13 @@ include_once "header.php";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+    body {
+      background-color: #1f2029;
+    }
     </style>
   </head>
 <body>
-<section style="background-color: #eee;">
+<section>
   <div class="container py-5">
     <div class="row">
       <div class="col-lg-4">
@@ -21,7 +24,7 @@ include_once "header.php";
               class="rounded-circle img-fluid" style="width: 150px;">
             <h5 class="my-3">John Smith</h5>
             <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn btn-primary">Follow</button>
+            <a href= "admin.php" type="button" class="btn ">Admin</a>
               <a href= "logout.php" class="btn btn-outline-primary ms-1">Logout</a>
             </div>
           </div>
@@ -50,7 +53,7 @@ include_once "header.php";
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Phone</p>
+                <p class="mb-0">Password</p>
               </div>
               <div class="col-sm-9">
                 <p class="text-muted mb-0">(097) 234-5678</p>
@@ -59,20 +62,13 @@ include_once "header.php";
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Mobile</p>
+                <p class="mb-0">>>>>>>>>>>>>></p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">(098) 765-4321</p>
+                <p class="text-muted mb-0">>>>>>>>>>>>>>></p>
               </div>
             </div>
             <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-              </div>
             </div>
           </div>
         </div>
@@ -110,7 +106,7 @@ include_once "header.php";
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" >
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
                 <p class="mb-4"><span class="text-primary font-italic me-1">Assigment</span> Project Status
@@ -147,6 +143,28 @@ include_once "header.php";
       </div>
     </div>
   </div>
+  <div class="container overflow-hidden">
+  <div class="row gy-5">
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+    <div class="col-6">
+      <div class="p-3"></div>
+    </div>
+  </div>
+</div>
 </section>
+<?php
+include_once "footer.php";
+?>
 </body>
 </html>
