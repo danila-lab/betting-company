@@ -17,8 +17,9 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
 
 $mysqli = require __DIR__ . "/database.php";
 
-$sql = "INSERT INTO user (name, email, password)
-        VALUES (?, ?, ?)";
+$id = uniqid();
+$sql = "INSERT INTO user (id, name, email, password)
+        VALUES (?, ?, ?, ?)";
         
 $stmt = $mysqli->stmt_init();
 
@@ -26,7 +27,8 @@ if ( ! $stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 
-$stmt->bind_param("sss",
+$stmt->bind_param("ssss",
+                  $id,
                   $_POST["name"],
                   $_POST["email"],
                   $_POST["password"]);

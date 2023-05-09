@@ -1,14 +1,9 @@
 <?php
-
-$host = "localhost";
-$dbname = "bet_db";
+$servername = "localhost";
+$database = "bet_db";
 $username = "root";
 $password = "";
 
-$mysqli = new mysqli(hostname: $host, username: $username, password: $password, database: $dbname);
-                     
-if ($mysqli->connect_errno) {
-    die("Connection error: " . $mysqli->connect_error);
-}
+$conn = mysqli_connect($servername, $username, $password, $database);
 
-return $mysqli;
+return $conn;

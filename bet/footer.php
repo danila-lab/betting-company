@@ -56,9 +56,6 @@
             <li>
               <a href="#!" class="text-white">05765 NY</a>
             </li>
-            <li>
-              <a href="#!" class="text-white"><i class="fas fa-briefcase fa-fw fa-sm me-2"></i>Send us a book</a>
-            </li>
           </ul>
         </div>
         <!--Grid column-->
@@ -88,7 +85,7 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
       © 2021 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">BET</a>
+      <a class="text-white">BET</a>
     </div>
     <!-- Copyright -->
 </footer>
